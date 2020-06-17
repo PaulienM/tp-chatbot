@@ -1,34 +1,86 @@
-# search intent
+# rechercheLigneDisponible intent
 ---
 type: intent
-name: rechercherTransport
+name: rechercheLigneDisponible
+slots:
+  - name: ligne
+    entity: ligne
+utterances:
+  - Quels sont les transports disponibles a [ligne](Chavant) ?
+#  - Quels sont les transports disponibles a Chavant ?
+#  - Quels sont les transports disponibles a berriat-Le Magasin ?
+  - Quels sont les lignes disponibles a [ligne](Chavant) ?
+
+# rechercherArretsLigne intent
+---
+type: intent
+name: rechercherArretsLigne
 slots:
   - name: nomArret
     entity: nomArret
 utterances:
-  - A quelle heure passe le prochain trame a [nomArret](chavant)
-  - Comment se rendre a [nomArret](chavant) s'il vous plait ?
-#  - Comment se rendre a chavant s'il vous plait ?
-#  - Comment se rendre docteur Martin s'il vous plait ?
-#  - Comment se rendre berriat-Le Magasin s'il vous plait ?
-  - Quels sont les transports disponibles pour me rendre a [nomArret](chavant) ?
-  - Dans combien de temps je pense le trame a [nomArret](chavant) ?
+  - A quelle heure passe la [ligne](ligne A) a [nomArret](Chavant) ?
+  - Comment se rendre a [nomArret](Chavant) s'il vous plait avec la [ligne](ligne A) ?
+  - Quels sont les transports disponibles pour me rendre a [nomArret](Chavant) ?
+  - Dans combien de temps passe la [ligne](ligne A) a [nomArret](Chavant) ?
 
-## horaire entity
-#---
-#type: entity
-#name: horaire
-#automatically_extensible: no
-#values:
-#- 17h30
-#- [18h00,  6h54, 14h10]
+  #  - Comment se rendre a Chavant s'il vous plait ?
+  #  - Comment se rendre docteur Martin s'il vous plait ?
+  #  - Comment se rendre berriat-Le Magasin s'il vous plait ?
+  #  - Comment se rendre condorcet s'il vous plait ?
+
+
+# rechercherArretsLigneDirection intent
+---
+type: intent
+name: rechercherArretsLigneDirection
+slots:
+  - name: nomDirection
+    entity: nomDirection
+utterances:
+  - A quelle heure passe la [ligne](ligne A) a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités) ?
+  - Comment se rendre a [nomArret](Chavant) s'il vous plait avec la [ligne](ligne A) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités)?
+  - Quels sont les transports disponibles pour me rendre a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités) ?
+  - Dans combien de temps passe la [ligne](ligne A) a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités)?
+
+  #SAINT-MARTIN-D'HÈRES Condillac - Universités ligne C
+
+# Nom ligne
+---
+type: entity
+name: nomLigne
+automatically_extensible: yes
+values:
+- ligne A
+- [ligne A, ligne B, ligne C]
+- [C1, C2, C5, C7, C6]
+
 
 # Nom arret entity
 ---
 type: entity
 name: nomArret
-automatically_extensible: no
+automatically_extensible: yes
 values:
-- berriat-Le Magasin
-- [chavant,victor Hugo, Flandrin]
-- [docteur Martin, condorcet, cite internationale]
+  - Berriat-Le Magasin
+  - [Chavant,Victor Hugo, Flandrin]
+  - [docteur Martin, condorcet, cite internationale]
+
+
+# direction entity
+---
+type: entity
+name: direction
+automatically_extensible: yes
+values:
+- FONTAINE La Poya
+- [PONT-DE-CLAIX L'Étoile, GRENOBLE Oxford, GIERES Plaine des Sports, SAINT-MARTIN-D'HÈRES Condillac - Universités]
+
+## horaire entity
+#---
+#type: entity
+#name: horaire
+#automatically_extensible: yes
+#values:
+#- 17h30
+#- [18h00,  6h54, 14h10]

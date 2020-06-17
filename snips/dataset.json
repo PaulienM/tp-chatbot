@@ -1,7 +1,31 @@
 {
   "entities": {
+    "direction": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "La Poya"
+        },
+        {
+          "synonyms": [
+            "Denis Papin",
+            "Plaine des sports"
+          ],
+          "value": "Le Prisme"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ligne": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "nomArret": {
-      "automatically_extensible": false,
+      "automatically_extensible": true,
       "data": [
         {
           "synonyms": [],
@@ -24,20 +48,90 @@
       ],
       "matching_strictness": 1.0,
       "use_synonyms": true
+    },
+    "nomLigne": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "ligne A"
+        },
+        {
+          "synonyms": [
+            "ligne B",
+            "ligne C"
+          ],
+          "value": "ligne A"
+        },
+        {
+          "synonyms": [
+            "Bus 112",
+            "Bus 72"
+          ],
+          "value": "Bus 92"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
     }
   },
   "intents": {
-    "rechercherTransport": {
+    "rechercheLigneDisponible": {
       "utterances": [
         {
           "data": [
             {
-              "text": "A quelle heure passe le prochain trame a "
+              "text": "Quels sont les transports disponibles a "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "chavant"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Quels sont les lignes disponibles a "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "chavant"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        }
+      ]
+    },
+    "rechercherArretsLigne": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "A quelle heure passe la "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "ligne A"
+            },
+            {
+              "text": " a "
             },
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
               "text": "chavant"
+            },
+            {
+              "text": " ?"
             }
           ]
         },
@@ -52,7 +146,15 @@
               "text": "chavant"
             },
             {
-              "text": " s'il vous plait ?"
+              "text": " s'il vous plait avec la "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "ligne A"
+            },
+            {
+              "text": " ?"
             }
           ]
         },
@@ -74,7 +176,15 @@
         {
           "data": [
             {
-              "text": "Dans combien de temps je pense le trame a "
+              "text": "Dans combien de temps passe la "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "ligne A"
+            },
+            {
+              "text": " a "
             },
             {
               "entity": "nomArret",
@@ -87,7 +197,127 @@
           ]
         }
       ]
+    },
+    "rechercherArretsLigneDirection": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "A quelle heure passe la "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "ligne A"
+            },
+            {
+              "text": " a "
+            },
+            {
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "chavant"
+            },
+            {
+              "text": " direction "
+            },
+            {
+              "entity": "direction",
+              "slot_name": "direction",
+              "text": "Denis Papin"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Comment se rendre a "
+            },
+            {
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "chavant"
+            },
+            {
+              "text": " s'il vous plait avec la "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "ligne A"
+            },
+            {
+              "text": " direction "
+            },
+            {
+              "entity": "direction",
+              "slot_name": "direction",
+              "text": "La Poya"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Quels sont les transports disponibles pour me rendre a "
+            },
+            {
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "chavant"
+            },
+            {
+              "text": " direction "
+            },
+            {
+              "entity": "direction",
+              "slot_name": "direction",
+              "text": "Denis Papin"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Dans combien de temps passe la "
+            },
+            {
+              "entity": "ligne",
+              "slot_name": "ligne",
+              "text": "ligne A"
+            },
+            {
+              "text": " a "
+            },
+            {
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "chavant"
+            },
+            {
+              "text": " direction "
+            },
+            {
+              "entity": "direction",
+              "slot_name": "direction",
+              "text": "La Poya"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
     }
   },
-  "language": "en"
+  "language": "fr"
 }
