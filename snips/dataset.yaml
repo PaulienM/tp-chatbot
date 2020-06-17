@@ -1,4 +1,4 @@
-# turnLightOn intent
+# search intent
 ---
 type: intent
 name: rechercherTransport
@@ -7,18 +7,21 @@ slots:
     entity: nomArret
 utterances:
   - A quelle heure passe le prochain trame a [nomArret](chavant)
-  - Comment se rendre à [nomArret](chavant) please?
-  - Quels sont les transports disponibles pour me rendre à [nomArret](chavant) ?
-  - Dans combien de temps je pense le trame à [nomArret](chavant)?
+  - Comment se rendre a [nomArret](chavant) s'il vous plait ?
+#  - Comment se rendre a chavant s'il vous plait ?
+#  - Comment se rendre docteur Martin s'il vous plait ?
+#  - Comment se rendre berriat-Le Magasin s'il vous plait ?
+  - Quels sont les transports disponibles pour me rendre a [nomArret](chavant) ?
+  - Dans combien de temps je pense le trame a [nomArret](chavant) ?
 
-# horaire entity
----
-type: entity
-name: horaire
-automatically_extensible: no
-values:
-- 17h30
-- [18h00,  6h54, 14h10]
+## horaire entity
+#---
+#type: entity
+#name: horaire
+#automatically_extensible: no
+#values:
+#- 17h30
+#- [18h00,  6h54, 14h10]
 
 # Nom arret entity
 ---
@@ -27,5 +30,5 @@ name: nomArret
 automatically_extensible: no
 values:
 - berriat-Le Magasin
-- [chavant,victor Hugo, Flandrin - Valmy]
+- [chavant,victor Hugo, Flandrin]
 - [docteur Martin, condorcet, cite internationale]
