@@ -6,12 +6,16 @@ slots:
   - name: ligne
     entity: ligne
 utterances:
-  - Quels sont les transports disponibles a [ligne](Chavant) ?
-#  - Quels sont les transports disponibles a Chavant ?
-#  - Quels sont les transports disponibles a berriat-Le Magasin ?
-  - Quels sont les lignes disponibles a [ligne](Chavant) ?
+  - Quels sont les transports disponibles a l'arret [nomArret](Chavant) ?
+  - Quels sont les lignes disponibles a l'arret [nomArret](Chavant) ?
+  - Comment aller a Hyper-Centre a Grenoble en Bus ou Tram
+  - Comment aller au [nomArret](Chavant) a Grenoble en Bus ou Tram ?
+# - Comment aller au Site de Minatec a Grenoble en Bus ou Tram
+# - Quels sont les transports disponibles de l'arrêt Flandrin ?
+# - Quels sont les transports disponibles a berriat-Le Magasin ?
 
-# rechercherArretsLigne intent
+
+# rechercherArretLigne intent
 ---
 type: intent
 name: rechercherArretsLigne
@@ -19,18 +23,19 @@ slots:
   - name: nomArret
     entity: nomArret
 utterances:
-  - A quelle heure passe la [ligne](ligne A) a [nomArret](Chavant) ?
   - Comment se rendre a [nomArret](Chavant) s'il vous plait avec la [ligne](ligne A) ?
   - Quels sont les transports disponibles pour me rendre a [nomArret](Chavant) ?
-  - Dans combien de temps passe la [ligne](ligne A) a [nomArret](Chavant) ?
+  - Comment aller a [nomArret](Chavant) a Grenoble en Bus ou Tram ?
+  - Quelles sont les lignes de Bus ou Tram qui s'arrêtent près de [nomArret](Chavant)?
+  - Quels transports sont disponibles pour se rendre au [nomArret](centre ville) de Grenoble?
+  #  - Comment aller a place Grenette a Grenoble en Bus ou Tram ? ##
+  #  - Comment aller a Grenoble Centre en Bus ou Tram ? ##
+  #  - Comment aller a Victor Hugo a Grenoble en Bus ou Tram ?
+  #  - Comment aller a Victor Hugo en Bus ou Tram ? ##
+  #  - Dans combien de temps passe la ligne A a Chavant ?
+  #  - Comment se rendre a Condorcet s'il vous plait avec la ligne E ?
 
-  #  - Comment se rendre a Chavant s'il vous plait ?
-  #  - Comment se rendre docteur Martin s'il vous plait ?
-  #  - Comment se rendre berriat-Le Magasin s'il vous plait ?
-  #  - Comment se rendre condorcet s'il vous plait ?
-
-
-# rechercherArretsLigneDirection intent
+# rechercherArretLigneDirection intent
 ---
 type: intent
 name: rechercherArretsLigneDirection
@@ -38,12 +43,17 @@ slots:
   - name: nomDirection
     entity: nomDirection
 utterances:
-  - A quelle heure passe la [ligne](ligne A) a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités) ?
-  - Comment se rendre a [nomArret](Chavant) s'il vous plait avec la [ligne](ligne A) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités)?
-  - Quels sont les transports disponibles pour me rendre a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités) ?
-  - Dans combien de temps passe la [ligne](ligne A) a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universités)?
+  - A quelle heure passe la ligne [ligne](A) a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universites) ?
+  - S'il vous plait comment se rendre a [nomArret](Chavant) avec la ligne [ligne](A) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universites)?
+  - Quels sont les transports disponibles pour me rendre a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universites) ?
+  - Dans combien de temps passe la ligne [ligne](A) a [nomArret](Chavant) direction [direction](SAINT-MARTIN-D'HÈRES Condillac - Universites) ?
+#  - Dans combien de temps passe la ligne A a Chavant direction SAINT-MARTIN-D'HÈRES Condillac - Universites ?
+#  - S'il vous plait comment se rendre a Chavant avec la ligne A direction SAINT-MARTIN-D'HÈRES Condillac - Universites?
+#  - Quels sont les transports disponibles pour me rendre a Chavant direction SAINT-MARTIN-D'HÈRES Condillac - Universites ?
+#  - Dans combien de temps passe la ligne B a Chavant direction GIERES Plaine des Sports ?
 
-  #SAINT-MARTIN-D'HÈRES Condillac - Universités ligne C
+
+  #SAINT-MARTIN-D'HÈRES Condillac - Universites ligne C
 
 # Nom ligne
 ---
@@ -51,9 +61,14 @@ type: entity
 name: nomLigne
 automatically_extensible: yes
 values:
-- ligne A
-- [ligne A, ligne B, ligne C]
-- [C1, C2, C5, C7, C6]
+- A
+- B
+- C
+- E
+- F
+- C1 #bus
+- C2 #bus
+- C5 #bus
 
 
 # Nom arret entity
@@ -63,8 +78,17 @@ name: nomArret
 automatically_extensible: yes
 values:
   - Berriat-Le Magasin
-  - [Chavant,Victor Hugo, Flandrin]
-  - [docteur Martin, condorcet, cite internationale]
+  - Chavant
+  - [Parc Paul Mistral, Cinema Pathe Chavant]
+  - Victor Hugo
+  - [centre ville, Hyper-Centre, Grenoble Centre]
+  - Hubert Dubedout - Maison du Tourisme
+  - [place Grenette]
+  - Flandrin
+  - Docteur Martin
+  - Condorcet
+  - Cite Internationale
+  - [Site de Minatec]
 
 
 # direction entity
@@ -74,13 +98,12 @@ name: direction
 automatically_extensible: yes
 values:
 - FONTAINE La Poya
-- [PONT-DE-CLAIX L'Étoile, GRENOBLE Oxford, GIERES Plaine des Sports, SAINT-MARTIN-D'HÈRES Condillac - Universités]
-
-## horaire entity
-#---
-#type: entity
-#name: horaire
-#automatically_extensible: yes
-#values:
-#- 17h30
-#- [18h00,  6h54, 14h10]
+- PONT-DE-CLAIX L'etoile
+- GRENOBLE Oxford
+- GIERES Plaine des Sports
+- SAINT-MARTIN-D'HERES Condillac
+- Universites
+- GRENOBLE Cité Jean Macé #bus c1
+- MEYLAN Maupertuis #bus c1
+- GRENOBLE Palais de Justice - Gare #bus c5
+- GIÈRES Universités - Biologie #bus c5

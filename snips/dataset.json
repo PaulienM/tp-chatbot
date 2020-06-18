@@ -5,14 +5,43 @@
       "data": [
         {
           "synonyms": [],
-          "value": "La Poya"
+          "value": "FONTAINE La Poya"
         },
         {
-          "synonyms": [
-            "Denis Papin",
-            "Plaine des sports"
-          ],
-          "value": "Le Prisme"
+          "synonyms": [],
+          "value": "PONT-DE-CLAIX L'etoile"
+        },
+        {
+          "synonyms": [],
+          "value": "GRENOBLE Oxford"
+        },
+        {
+          "synonyms": [],
+          "value": "GIERES Plaine des Sports"
+        },
+        {
+          "synonyms": [],
+          "value": "SAINT-MARTIN-D'HERES Condillac"
+        },
+        {
+          "synonyms": [],
+          "value": "Universites"
+        },
+        {
+          "synonyms": [],
+          "value": "GRENOBLE Cit\u00e9 Jean Mac\u00e9"
+        },
+        {
+          "synonyms": [],
+          "value": "MEYLAN Maupertuis"
+        },
+        {
+          "synonyms": [],
+          "value": "GRENOBLE Palais de Justice - Gare"
+        },
+        {
+          "synonyms": [],
+          "value": "GI\u00c8RES Universit\u00e9s - Biologie"
         }
       ],
       "matching_strictness": 1.0,
@@ -29,21 +58,56 @@
       "data": [
         {
           "synonyms": [],
-          "value": "berriat-Le Magasin"
+          "value": "Berriat-Le Magasin"
+        },
+        {
+          "synonyms": [],
+          "value": "Chavant"
         },
         {
           "synonyms": [
-            "victor Hugo",
-            "Flandrin"
+            "Cinema Pathe Chavant"
           ],
-          "value": "chavant"
+          "value": "Parc Paul Mistral"
+        },
+        {
+          "synonyms": [],
+          "value": "Victor Hugo"
+        },
+        {
+          "synonyms": [],
+          "value": "Hubert Dubedout - Maison du Tourisme"
+        },
+        {
+          "synonyms": [],
+          "value": "place Grenette"
         },
         {
           "synonyms": [
-            "condorcet",
-            "cite internationale"
+            "Hyper-Centre",
+            "Grenoble Centre"
           ],
-          "value": "docteur Martin"
+          "value": "centre ville"
+        },
+        {
+          "synonyms": [],
+          "value": "Flandrin"
+        },
+        {
+          "synonyms": [],
+          "value": "Docteur Martin"
+        },
+        {
+          "synonyms": [],
+          "value": "Condorcet"
+        },
+        {
+          "synonyms": [],
+          "value": "Cite Internationale"
+        },
+        {
+          "synonyms": [],
+          "value": "Site de Minatec"
         }
       ],
       "matching_strictness": 1.0,
@@ -54,21 +118,35 @@
       "data": [
         {
           "synonyms": [],
-          "value": "ligne A"
+          "value": "A"
         },
         {
-          "synonyms": [
-            "ligne B",
-            "ligne C"
-          ],
-          "value": "ligne A"
+          "synonyms": [],
+          "value": "B"
         },
         {
-          "synonyms": [
-            "Bus 112",
-            "Bus 72"
-          ],
-          "value": "Bus 92"
+          "synonyms": [],
+          "value": "C"
+        },
+        {
+          "synonyms": [],
+          "value": "E"
+        },
+        {
+          "synonyms": [],
+          "value": "F"
+        },
+        {
+          "synonyms": [],
+          "value": "C1"
+        },
+        {
+          "synonyms": [],
+          "value": "C2"
+        },
+        {
+          "synonyms": [],
+          "value": "C5"
         }
       ],
       "matching_strictness": 1.0,
@@ -81,12 +159,12 @@
         {
           "data": [
             {
-              "text": "Quels sont les transports disponibles a "
+              "text": "Quels sont les transports disponibles a l'arret "
             },
             {
-              "entity": "ligne",
-              "slot_name": "ligne",
-              "text": "chavant"
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "Chavant"
             },
             {
               "text": " ?"
@@ -96,15 +174,37 @@
         {
           "data": [
             {
-              "text": "Quels sont les lignes disponibles a "
+              "text": "Quels sont les lignes disponibles a l'arret "
             },
             {
-              "entity": "ligne",
-              "slot_name": "ligne",
-              "text": "chavant"
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "Chavant"
             },
             {
               "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Comment aller a Hyper-Centre a Grenoble en Bus ou Tram"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Comment aller au "
+            },
+            {
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "Chavant"
+            },
+            {
+              "text": " a Grenoble en Bus ou Tram ?"
             }
           ]
         }
@@ -115,35 +215,12 @@
         {
           "data": [
             {
-              "text": "A quelle heure passe la "
-            },
-            {
-              "entity": "ligne",
-              "slot_name": "ligne",
-              "text": "ligne A"
-            },
-            {
-              "text": " a "
-            },
-            {
-              "entity": "nomArret",
-              "slot_name": "nomArret",
-              "text": "chavant"
-            },
-            {
-              "text": " ?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
               "text": "Comment se rendre a "
             },
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
-              "text": "chavant"
+              "text": "Chavant"
             },
             {
               "text": " s'il vous plait avec la "
@@ -166,7 +243,7 @@
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
-              "text": "chavant"
+              "text": "Chavant"
             },
             {
               "text": " ?"
@@ -176,23 +253,45 @@
         {
           "data": [
             {
-              "text": "Dans combien de temps passe la "
-            },
-            {
-              "entity": "ligne",
-              "slot_name": "ligne",
-              "text": "ligne A"
-            },
-            {
-              "text": " a "
+              "text": "Comment aller a "
             },
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
-              "text": "chavant"
+              "text": "Chavant"
             },
             {
-              "text": " ?"
+              "text": " a Grenoble en Bus ou Tram ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Quelles sont les lignes de Bus ou Tram qui s'arr\u00eatent pr\u00e8s de "
+            },
+            {
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "Chavant"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Quels transports sont disponibles pour se rendre au "
+            },
+            {
+              "entity": "nomArret",
+              "slot_name": "nomArret",
+              "text": "centre ville"
+            },
+            {
+              "text": " de Grenoble?"
             }
           ]
         }
@@ -203,12 +302,12 @@
         {
           "data": [
             {
-              "text": "A quelle heure passe la "
+              "text": "A quelle heure passe la ligne "
             },
             {
               "entity": "ligne",
               "slot_name": "ligne",
-              "text": "ligne A"
+              "text": "A"
             },
             {
               "text": " a "
@@ -216,7 +315,7 @@
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
-              "text": "chavant"
+              "text": "Chavant"
             },
             {
               "text": " direction "
@@ -224,7 +323,7 @@
             {
               "entity": "direction",
               "slot_name": "direction",
-              "text": "Denis Papin"
+              "text": "SAINT-MARTIN-D'H\u00c8RES Condillac - Universites"
             },
             {
               "text": " ?"
@@ -234,20 +333,20 @@
         {
           "data": [
             {
-              "text": "Comment se rendre a "
+              "text": "S'il vous plait comment se rendre a "
             },
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
-              "text": "chavant"
+              "text": "Chavant"
             },
             {
-              "text": " s'il vous plait avec la "
+              "text": " avec la ligne "
             },
             {
               "entity": "ligne",
               "slot_name": "ligne",
-              "text": "ligne A"
+              "text": "A"
             },
             {
               "text": " direction "
@@ -255,7 +354,7 @@
             {
               "entity": "direction",
               "slot_name": "direction",
-              "text": "La Poya"
+              "text": "SAINT-MARTIN-D'H\u00c8RES Condillac - Universites"
             },
             {
               "text": "?"
@@ -270,7 +369,7 @@
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
-              "text": "chavant"
+              "text": "Chavant"
             },
             {
               "text": " direction "
@@ -278,7 +377,7 @@
             {
               "entity": "direction",
               "slot_name": "direction",
-              "text": "Denis Papin"
+              "text": "SAINT-MARTIN-D'H\u00c8RES Condillac - Universites"
             },
             {
               "text": " ?"
@@ -288,12 +387,12 @@
         {
           "data": [
             {
-              "text": "Dans combien de temps passe la "
+              "text": "Dans combien de temps passe la ligne "
             },
             {
               "entity": "ligne",
               "slot_name": "ligne",
-              "text": "ligne A"
+              "text": "A"
             },
             {
               "text": " a "
@@ -301,7 +400,7 @@
             {
               "entity": "nomArret",
               "slot_name": "nomArret",
-              "text": "chavant"
+              "text": "Chavant"
             },
             {
               "text": " direction "
@@ -309,10 +408,10 @@
             {
               "entity": "direction",
               "slot_name": "direction",
-              "text": "La Poya"
+              "text": "SAINT-MARTIN-D'H\u00c8RES Condillac - Universites"
             },
             {
-              "text": "?"
+              "text": " ?"
             }
           ]
         }
